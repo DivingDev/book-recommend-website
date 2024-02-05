@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Read-it</title>
+    
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/assets/css/custom.css">
+
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg bg-primary">
+        <div class="container-fluid bg">
+            <a class="navbar-brand text-warning" href="#">Read-it</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" aria-current="page" href="/recommend">Recommend</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="https://github.com/DivingDev">Link</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cards -->
+    <div>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 style="font-size:50px">Top #25</h1>
+                </div>
+
+                {% for i in range(book_name|length) %}
+                    <div class="col-md-2">
+                        <div class="card">
+                            <img class="card-img-top" src="{{ image[i] }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ book_name[i] }}</h5>
+                                <p class="card-text">
+                                <h6 class="text-danger">Votes: {{ votes[i] }} </h6>
+                                <h6 class="text-danger">Rating: {{ rating[i] }}</h6>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
